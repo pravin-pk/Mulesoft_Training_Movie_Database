@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/home.css">
+    <!-- <script src="/static/leaderboard.js"></script> -->
+
+    <title>LEADERBOARD</title>
+</head>
+{% block content %}
+<body>
+    <!-- specify a table with a row describing the title of each column -->
+<table>
+    <tr>
+      <th>
+        Movie Name
+      </th>
+      <th>
+        Actor
+      </th>
+      <th>
+        Actress
+      </th>
+      <th>
+        Year of release
+      </th>
+      <th>
+        Director
+      </th>
+    </tr>
+    {% for values in content %}
+    <tr>
+        <td><strong>{{values[1]}}</strong></td>
+        <td>{{values[2]}}</td>
+        <td>{{values[3]}}</td>
+        <td>{{values[4]}}</td>
+        <td>{{values[5]}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <hr><br>
+  <form action="/" method="post">
+    <div id>
+        <label for="queryactor" style="margin-left: 15px;">Actor Name :</label>
+        <input type="text" name="queryactor" id="queryactor" style="margin-left: 5px;">
+        <button type="submit" style="margin-left: 50px;">QUERY</button>
+    </div>
+</form> 
+<form action="/insert" method="post">
+  <div id="footer">
+      <input type="text" name="movie" id="movie" style="margin-left: 5%;"  placeholder="MOVIE NAME">
+      <input type="text" name="actor" id="actor" style="margin-left: 5%;" placeholder="ACTOR NAME">
+      <input type="text" name="actress" id="actress" style="margin-left: 5%;" placeholder="ACTESS NAME">
+      <input type="text" name="yearofrelease" id="yearofrelease" style="margin-left: 5%;" placeholder="YEAR OF RELEASE">
+      <input type="text" name="director" id="director" style="margin-left: 8%;" placeholder="DIRECTOR NAME">
+      <button type="submit" style="margin-left: 5%;">SUBMIT</button>
+    </div>
+</form>
+</body>
+{% endblock %}
+</html>
