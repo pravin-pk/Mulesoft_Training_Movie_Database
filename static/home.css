@@ -63,39 +63,6 @@ table td.position {
   font-weight: 500;
 }
 
-/* style the cell with the driver visually separating the first, last name and team */
-table td.driver {
-  padding-left: 1rem;
-  font-size: 1.1rem;
-  letter-spacing: 0.05rem;
-}
-table td.driver strong {
-  text-transform: uppercase;
-  font-weight: 500;
-}
-table td.driver span {
-  text-transform: capitalize;
-  margin-left: 0.75rem;
-  font-size: 0.8rem;
-  color: #999;
-  letter-spacing: initial;
-}
-
-/* style the span nested in the last cell to have the gap in a rounded rectangle */
-table td.gap span {
-  background: #38383F;
-  border-radius: 30px;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
-
-/* on smaller viewports remove the third column from sight */
-@media (max-width: 500px) {
-  table tr > *:nth-child(3) {
-    display: none;
-  }
-}
 
 #footer {
     display: flex;
