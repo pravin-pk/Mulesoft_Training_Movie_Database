@@ -1,8 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request
 import sqlite3
 
-from sqlalchemy import null
-
 app = Flask(__name__)
 
 
@@ -55,13 +53,14 @@ def home():
 
         return render_template("home.html", content = data)
 
-    if request.form.get("queryactor") == '':
+    if request.form.get("queryvalue") == '':
         return redirect(url_for("home"))
 
     conn = sqlite3.connect("movieDB.db")
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM MOVIES WHERE ACTOR LIKE '%" + request.form.get("queryactor") + "%';")
+    cur.execute("SELECT * FROM MOVIES WHERE "+ request.form.get("queryfactor") + " LIKE '%" + request.form.get("queryvalue") + "%';")
+
     data = cur.fetchall()
 
     cur.close()
