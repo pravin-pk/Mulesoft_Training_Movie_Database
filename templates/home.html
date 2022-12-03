@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="static/home.css">
     <!-- <script src="/static/leaderboard.js"></script> -->
 
-    <title>LEADERBOARD</title>
+    <title>Movie Database</title>
 </head>
 {% block content %}
 <body>
@@ -43,8 +43,15 @@
   <hr><br>
   <form action="/" method="post">
     <div id>
-        <label for="queryactor" style="margin-left: 15px;">Actor Name :</label>
-        <input type="text" name="queryactor" id="queryactor" style="margin-left: 5px;">
+        <!-- <label for="queryactor" style="margin-left: 15px;">Actor Name :</label> -->
+        <select name = "queryfactor" id = "queryfactor">
+          <option value="MOVIE">Movie Name</option>
+          <option value="ACTOR">Actor Name</option>
+          <option value="ACTRESS">Actress Name</option>
+          <option value="YEAROFRELEASE">YOR</option>
+          <option value="DIRECTOR">Director Name</option>
+        </select>
+        <input type="text" name="queryvalue" id="queryvalue" style="margin-left: 5px;">
         <button type="submit" style="margin-left: 50px;">QUERY</button>
     </div>
 </form> 
